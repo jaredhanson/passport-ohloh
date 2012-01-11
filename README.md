@@ -7,6 +7,53 @@ with Ohloh using the OAuth 1.0 API.
 
     $ npm install passport-ohloh
 
+## Usage
+
+#### Configure Strategy
+
+The Ohloh authentication strategy authenticates users using a Ohloh account
+and OAuth tokens.  The strategy requires a `verify` callback, which accepts
+these credentials and calls `done` providing a user, as well as `options`
+specifying a consumer key, consumer secret, and callback URL.
+
+    passport.use(new OhlohStrategy({
+        consumerKey: OHLOH_API_KEY,
+        consumerSecret: OHLOH_CONSUMER_SECRET,
+        callbackURL: "http://127.0.0.1:3000/auth/ohloh/callback"
+      },
+      function(token, tokenSecret, profile, done) {
+        User.findOrCreate({ ohlohId: profile.id }, function (err, user) {
+          return done(err, user);
+        });
+      }
+    ));
+
+#### Authenticate Requests
+
+Use `passport.authenticate()`, specifying the `'ohloh'` strategy, to
+authenticate requests.
+
+For example, as route middleware in an [Express](http://expressjs.com/)
+application:
+
+    app.get('/auth/ohloh',
+      passport.authenticate('ohloh'),
+      function(req, res){
+        // The request will be redirected to Ohloh for authentication, so this
+        // function will not be called.
+      });
+
+    app.get('/auth/ohloh/callback', 
+      passport.authenticate('ohloh', { failureRedirect: '/login' }),
+      function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+      });
+
+#### Examples
+
+For a complete, working example, refer to the [login example](https://github.com/jaredhanson/passport-ohloh/tree/master/examples/login).
+
 ## Credits
 
   - [Jared Hanson](http://github.com/jaredhanson)
