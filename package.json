@@ -1,0 +1,28 @@
+{
+  "name": "passport-ohloh",
+  "version": "0.1.0",
+  "description": "Ohloh authentication strategy for Passport.",
+  "author": { "name": "Jared Hanson", "email": "jaredhanson@gmail.com", "url": "http://www.jaredhanson.net/" },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/passport-ohloh.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jaredhanson/passport-ohloh/issues"
+  },
+  "main": "./lib/passport-ohloh",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "~0.1.1",
+    "xml2js": "0.1.x"
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "keywords": ["passport", "ohloh", "auth", "authn", "authentication", "identity"]
+}
