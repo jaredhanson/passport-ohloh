@@ -1,7 +1,7 @@
 # Passport-Ohloh
 
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
-with Ohloh using the OAuth 1.0 API.
+with [Ohloh](http://www.ohloh.net/) using the OAuth 1.0 API.
 
 ## Installation
 
@@ -50,9 +50,14 @@ application:
         res.redirect('/');
       });
 
-#### Examples
+## Examples
 
 For a complete, working example, refer to the [login example](https://github.com/jaredhanson/passport-ohloh/tree/master/examples/login).
+
+## Tests
+
+    $ npm install --dev
+    $ make test
 
 ## Credits
 
