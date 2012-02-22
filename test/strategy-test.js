@@ -58,6 +58,13 @@ vows.describe('OhlohStrategy').addBatch({
         assert.equal(profile.id, '7476');
         assert.equal(profile.displayName, 'jaredhanson');
       },
+      'should set raw property' : function(err, profile) {
+        assert.isString(profile._raw);
+      },
+      'should set xml2js property' : function(err, profile) {
+        assert.isObject(profile._xml2js);
+        assert.strictEqual(profile._xml2json, profile._xml2js);
+      },
     },
   },
   
