@@ -1,6 +1,6 @@
 {
   "name": "passport-ohloh",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ohloh authentication strategy for Passport.",
   "keywords": ["passport", "ohloh", "auth", "authn", "authentication", "identity"],
   "repository": {
